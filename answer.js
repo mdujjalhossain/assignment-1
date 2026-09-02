@@ -14,7 +14,7 @@ function describeValue (input_val){
 
 
 // Question-> 2: Bangladesh Weekend Machine
-function getDayData(day){
+function getDayType(day){
     let input_day = day.toLowerCase()
 
     switch(input_day){
@@ -36,7 +36,7 @@ function getDayData(day){
 
 
 // Question -> 3: Username Gatekeeper
-function validateUserName(userName){
+function validateUsername(userName){
 
     if(userName.length<4){
         return "Too Short"
