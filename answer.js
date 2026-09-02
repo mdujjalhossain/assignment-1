@@ -9,7 +9,7 @@ function describeValue (input_val){
     else{
         bool_status = "falsy"
     }
-    return `"${valueType} | ${bool_status}"`
+    return `${valueType} | ${bool_status}`
 }
 
 
