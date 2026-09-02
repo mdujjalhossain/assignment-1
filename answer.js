@@ -51,5 +51,31 @@ function validateUserName(userName){
     }
 }
 
+//  Question-> 4:Dhaka CNG Fare Meter
+
+function getCngFare(distance, isNight = false, waitingMinutes = 0){
+    let base_fare = 50;
+    let extend_fare = 15;
+    let waiting_charge = 2;
+    
+    let distance_fare = 0
+    if(distance <= 2){
+        distance_fare = base_fare;
+    }
+    else{
+        let total_extend_fare = (distance - 2) * extend_fare
+        distance_fare = base_fare + total_extend_fare
+    }
+    
+    let waiting_fare = waitingMinutes * waiting_charge;
+
+    let total_fare = distance_fare + waiting_fare;
+    if(isNight == true){
+        let extra_nightFare = total_fare * 0.2;
+        total_fare += extra_nightFare 
+    }
+
+    return total_fare;
+}
 
 
