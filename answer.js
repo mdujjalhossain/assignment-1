@@ -12,6 +12,7 @@ function describeValue (input_val){
     return `"${valueType} | ${bool_status}"`
 }
 
+
 // Question-> 2: Bangladesh Weekend Machine
 function getDayData(day){
     let input_day = day.toLowerCase()
@@ -33,6 +34,7 @@ function getDayData(day){
     }
 }
 
+
 // Question -> 3: Username Gatekeeper
 
 function validateUserName(userName){
@@ -50,6 +52,7 @@ function validateUserName(userName){
         return "Available"
     }
 }
+
 
 //  Question-> 4:Dhaka CNG Fare Meter
 
@@ -77,5 +80,42 @@ function getCngFare(distance, isNight = false, waitingMinutes = 0){
 
     return total_fare;
 }
+
+
+// Question -> 5: Run Chase Commentator
+
+export const getChaseVerdict = (target, scored, ballsLeft) => {
+    const runsNeeded = target - scored;
+    
+    if(runsNeeded <= 0){
+        return "Won"
+    }
+    if(ballsLeft <= 0){
+        return "Lost"
+    }
+    
+    const requiredRate = (runsNeeded / ballsLeft) * 6
+    let verdict = ""
+    if(requiredRate <= 6){
+        verdict = "Comfortable"
+    }
+    else if (requiredRate > 6 && requiredRate <= 12){
+        verdict = "Tough"
+    }
+    else if (requiredRate > 12){
+        verdict = "Almost Impossible"
+    }
+    
+    if(runsNeeded > 0){
+        return `Need ${runsNeeded} runs in ${ballsLeft} balls | ${verdict}`
+    }
+
+}
+console.log(getChaseVerdict(200, 200, 12))
+console.log(getChaseVerdict(200, 190, 0))
+console.log(getChaseVerdict(100, 90, 12))
+console.log(getChaseVerdict(100, 80, 12))
+console.log(getChaseVerdict(100, 70, 12))
+console.log(getChaseVerdict(150, 149, 1))
 
 
