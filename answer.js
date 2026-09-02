@@ -36,7 +36,6 @@ function getDayData(day){
 
 
 // Question -> 3: Username Gatekeeper
-
 function validateUserName(userName){
 
     if(userName.length<4){
@@ -55,7 +54,6 @@ function validateUserName(userName){
 
 
 //  Question-> 4:Dhaka CNG Fare Meter
-
 function getCngFare(distance, isNight = false, waitingMinutes = 0){
     let base_fare = 50;
     let extend_fare = 15;
@@ -83,7 +81,6 @@ function getCngFare(distance, isNight = false, waitingMinutes = 0){
 
 
 // Question -> 5: Run Chase Commentator
-
 export const getChaseVerdict = (target, scored, ballsLeft) => {
     const runsNeeded = target - scored;
     
@@ -111,11 +108,5 @@ export const getChaseVerdict = (target, scored, ballsLeft) => {
     }
 
 }
-console.log(getChaseVerdict(200, 200, 12))
-console.log(getChaseVerdict(200, 190, 0))
-console.log(getChaseVerdict(100, 90, 12))
-console.log(getChaseVerdict(100, 80, 12))
-console.log(getChaseVerdict(100, 70, 12))
-console.log(getChaseVerdict(150, 149, 1))
 
 
